@@ -34,7 +34,6 @@ jobs:
         run: |
           humctl score deploy \
               --deploy-config apps/score.deploy.yaml \
-              --image ${{ env.IMAGE_NAME }}@${IMAGE_DIGEST} \
               --message "$(curl -H "Authorization: token ${{ secrets.GITHUB_TOKEN }}" "${{ github.event.pull_request.commits_url }}?per_page=10" | jq -r .[-1].commit.message)" \
               --workload-source-url-prefix "https://github.com/${{ github.repository }}/blob/${{ github.head_ref }}/apps" \
               --token ${{ secrets.HUMANITEC_TOKEN }} \
@@ -90,7 +89,7 @@ jobs:
             echo "</details>" >> pr_message.txt
             echo "" >> pr_message.txt
           fi
-          
+
           echo "### [View in Humanitec]($ENV_URL)" >> pr_message.txt
           echo "Deployment ID: $DEPLOYMENT_ID" >> pr_message.txt
 
@@ -99,7 +98,7 @@ jobs:
           echo "" >> pr_message.txt
           echo "$DOMAINS" >> pr_message.txt
           echo "" >> pr_message.txt
-          
+
           echo "<details><summary>Deployment diff</summary>" >> pr_message.txt
           echo "" >> pr_message.txt
           echo "### Deployment diff:" >> pr_message.txt
