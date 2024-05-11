@@ -1,3 +1,5 @@
+# Onlineboutique - Getting started
+
 Get the [GoogleCloudPlatform/microservices-demo](https://github.com/GoogleCloudPlatform/microservices-demo) to Score and Humanitec.
 
 [![Open in GitHub Codespaces](https://github.com/codespaces/badge.svg)](https://codespaces.new/Humanitec-DemoOrg/onlineboutique-demo)
@@ -11,11 +13,13 @@ This repository has been illustrated with this blog post: [Platform Engineering 
 You will need to [install `score-compose`](https://docs.score.dev/docs/score-implementation/score-compose/) locally.
 
 Deploy locally:
+
 ```bash
 make compose-up
 ```
 
 Get the generated DNS once the deployment is done:
+
 ```bash
 score-compose resources get-outputs dns.default#frontend.dns --format '{{ .host }}:8080'
 ```
