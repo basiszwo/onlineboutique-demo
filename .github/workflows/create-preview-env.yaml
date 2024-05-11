@@ -1,8 +1,7 @@
 name: Create Preview environment
 
 on:
-  pull_request_target:
-    types: [ opened, reopened ]
+  pull_request:
 
 jobs:
   create-preview-env:
