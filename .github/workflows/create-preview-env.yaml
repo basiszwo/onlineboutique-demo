@@ -11,7 +11,7 @@ jobs:
       - uses: humanitec/preview-envs-action@v1
         with:
           humanitec-token: ${{ secrets.HUMANITEC_TOKEN }}
-          humanitec-org: ${{ vars.HUMANITEC_ORG }}
+          humanitec-org: ${{ secrets.HUMANITEC_ORG }}
           humanitec-app: ${{ vars.HUMANITEC_APP_NAME }}
           action: create
           github-token: ${{ secrets.GITHUB_TOKEN }}
