@@ -29,6 +29,7 @@ score-compose resources get-outputs dns.default#frontend.dns --format '{{ .host 
 You will need to [install `humctl`](https://developer.humanitec.com/platform-orchestrator/cli/) locally.
 
 Deploy to Humanitec:
+
 ```bash
 export HUMANITEC_ORG=FIXME
 export HUMANITEC_APPLICATION=onlineboutique
@@ -46,6 +47,7 @@ make humanitec-deploy
 ```
 
 Get the generated DNS once the deployment is done:
+
 ```bash
 humctl get active-resources \
     --app ${HUMANITEC_APPLICATION} \
